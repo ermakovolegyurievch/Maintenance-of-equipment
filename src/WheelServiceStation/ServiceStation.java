@@ -1,25 +1,22 @@
 package WheelServiceStation;
 
 public class ServiceStation {
-    public void check(Car car, Bicycle bicycle, Truck truck) {
-        if (car != null) {
-            System.out.println("Обслуживаем " + car.modelName);
-            for (int i = 0; i < car.wheelsCount; i++) {
-                car.updateTyre();
-            }
+    public void checkTyres(Transport transport) {
+        System.out.println("Обслуживаем " + transport.modelName);
+        for (int i = 0; i < transport.getWheelsCount(); i++) {
+            transport.updateTyre();
+        }
+    }
+        public void check(Bicycle bicycle){
+           checkTyres(bicycle);
+        }
+        public void check(Car car){
+            checkTyres(car);
             car.checkEngine();
-        } else if (truck != null) {
-            System.out.println("Обслуживаем " + truck.modelName);
-            for (int i = 0; i < truck.wheelsCount; i++) {
-                truck.updateTyre();
-            }
+        }
+        public void check(Truck truck){
+            checkTyres(truck);
             truck.checkEngine();
             truck.checkTrailer();
-        } else if (bicycle != null) {
-            System.out.println("Обслуживаем " + bicycle.modelName);
-            for (int i = 0; i < bicycle.wheelsCount; i++) {
-                bicycle.updateTyre();
-            }
-        }
     }
 }

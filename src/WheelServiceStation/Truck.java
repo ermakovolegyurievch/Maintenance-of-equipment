@@ -6,7 +6,6 @@ public class Truck extends Transport {
         super(modelName, wheelsCount);
     }
 
-
     public void checkEngine() {
         System.out.println("Проверяем двигатель");
     }
